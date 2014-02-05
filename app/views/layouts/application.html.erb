@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TAOMAR Bucket</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag '/images/bear.ico' %> <!-- Favicon -->
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand">&hearts;</a>
+    <ul class="nav">
+      <li><%= link_to "Home", :controller => "lists" %></li>
+      <li><a href="http://schifano.github.io/taomar-menu/menu.html">Menu</a></li>
+      <li><%= link_to "Note", :controller => "pages", :action => "note" %></li>
+      <li><%= link_to "Merry Christmas", :controller => "pages", :action => "xmas" %></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- Edits a task -->
+<div class="task-container">
+<h2>Edit <%= @list.try(:task) %></h2>
+
+<%= form_for @list do |form| %>
+  <div>
+    <%= form.label :task %><br />
+    <%= form.text_field :task %>
+  </div>
+ 
+  <div>
+    <%= form.label :description %><br />
+    <%= form.text_field :description %>
+  </div>
+
+  <p><%= form.submit %></p>
+<% end %>
+</div>

@@ -1,0 +1,18 @@
+<!-- Creates new task -->
+<div class="task-container">
+<h2>Create New <s>Bucket List</s> Adventure</h2>
+
+<%= form_for @list do |form| %>
+  <div>
+    <%= form.label :task %>
+    <%= form.text_field :task, :class => "field" %>
+  </div>
+ 
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description, :class => "field" %>
+  </div>
+ 
+  <p><%= form.submit %></p>
+<% end %>
+</div>

@@ -1,0 +1,66 @@
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://cacpg.herokuapp.com/js/demos/snowfall.min.js"></script>
+<script>
+  $(document).ready(function() {
+    snowFall.snow($("section"), {
+    minSize: 1,
+    maxSize: 8,
+    round: true,
+    minSpeed: 1,
+    maxSpeed: 3,
+    flakeCount: 120
+    });
+  });
+</script>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+body {
+  background: #07162D;
+}
+h1 {
+  position: absolute;
+  margin: 0;
+  top: 10px;
+  left: 340px;
+  font-size: 48px;
+}
+h2 {
+  position: absolute;
+  margin: 0;
+  top: 60px;
+  left: 430px;
+  font-size: 36px;
+}
+h3 {
+  position: absolute;
+  margin: 0;
+  left: 10px;
+  font-size: 25px;
+  text-rendering: auto;
+}
+img {
+  position: absolute;
+  top: 300px;
+  left: 80px;
+}
+section {
+  margin: auto;
+  position: absolute;
+  left: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-image: url('/images/winter.png');
+  width: 700px;
+  height: 500px;
+  color: #FF99FF;
+  font-family: Lobster;
+}
+</style>
+
+  <section>
+    <h1>Merry Christmas!</h1>
+    <h2>I love you Michal</h2>
+    <h3>From Rachel &hearts;</h3>
+  </section>
+  <%= image_tag("nyan-xmas.gif", :alt => "Christmas Nyancat") %>

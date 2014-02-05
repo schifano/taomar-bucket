@@ -1,0 +1,41 @@
+<!-- Displays details of each task -->
+<div class="task-container">
+<h2><%= @list.task %></h2>
+<div class="center">
+  <p><%= @list.description %></p>
+  <!-- Add steps -->
+  <%= form_for [@list, @list.steps.new] do |form| %>
+    <%= form.text_field :description, :style => "vertical-align: baseline;" %>
+    <%= form.submit :style => "vertical-align: middle;" %>
+  <% end %>
+</div>
+
+<!-- Organize steps in table -->
+<table class="table table-striped">
+  <thead>
+    <th colspan="2">Steps</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <!-- Incompleted steps -->
+    <% @list.steps.incompleted.each do |single_step| %>
+    <tr>
+      <td><%= check_box_tag 'incomplete', '0' %></td>
+      <td><%= single_step.description %></td>
+      <td><%= button_to 'Complete', complete_list_step_path(@list.id, single_step.id) %></td>
+    <tr>
+    <% end %> 
+    <!-- Completed steps -->
+    <% @list.steps.completed.each do |single_step| %>
+    <tr>
+      <td><%= check_box_tag 'complete', '1', single_step.completed %></td>
+      <td><%= single_step.description %></td>
+      <td><%= button_to 'Destroy', {:controller => "steps", :action => 'destroy', 
+                                    :list_id => @list.id, :id => single_step.id}, 
+                                    :confirm => "Are you sure you want delete?", 
+                                    :method => :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
